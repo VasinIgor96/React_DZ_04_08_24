@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ButtonToggle from './components/ButtonToggle';
+import NumberInput from './components/NumberInput';
+import UserList from './components/UserList';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>1. Зміна кольору кнопки</h2>
+      <ButtonToggle />
+      
+      <h2>2. Ввід чисел</h2>
+      <NumberInput />
+      
+      <h2>3. Список користувачів</h2>
+      <UserList />
     </div>
   );
-}
+};
 
 export default App;
