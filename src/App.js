@@ -1,20 +1,30 @@
 import React from 'react';
-import ButtonToggle from './components/ButtonToggle';
-import NumberInput from './components/NumberInput';
-import UserList from './components/UserList';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import MoviePage from './pages/MoviePage';
+import PersonalPage from './pages/PersonalPage';
+import TimePage from './pages/TimePage';
+import PetPage from './pages/PetPage';
 
 const App = () => {
   return (
-    <div>
-      <h2>1. Зміна кольору кнопки</h2>
-      <ButtonToggle />
-      
-      <h2>2. Ввід чисел</h2>
-      <NumberInput />
-      
-      <h2>3. Список користувачів</h2>
-      <UserList />
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li><Link to="/">Movie</Link></li>
+            <li><Link to="/personal">Personal Page</Link></li>
+            <li><Link to="/time">Current Time</Link></li>
+            <li><Link to="/pet">Pet Info</Link></li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<MoviePage />} />
+          <Route path="/personal" element={<PersonalPage />} />
+          <Route path="/time" element={<TimePage />} />
+          <Route path="/pet" element={<PetPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
